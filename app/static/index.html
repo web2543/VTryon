@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Try-On</h1>
+        <p>Upload a base image and a cloth image, then generate the result.</p>
+    </header>
+
+    <main>
+        <div class="layout">
+            <!-- Left: Inputs -->
+            <div class="left-panel">
+                <div class="upload-card">
+                    <label for="base-image">Base Image</label>
+                    <input type="file" id="base-image" accept="image/*">
+                    <div class="preview" id="base-preview">No image selected</div>
+                </div>
+                <div class="upload-card">
+                    <label for="cloth-image">Cloth Image</label>
+                    <input type="file" id="cloth-image" accept="image/*">
+                    <div class="preview" id="cloth-preview">No image selected</div>
+                </div>
+            </div>
+
+            <!-- Right: Output -->
+            <div class="right-panel">
+                <div id="output-box" class="output-box">
+                    <div id="spinner" class="spinner hidden"></div>
+                    <img id="result-image" src="" alt="" class="hidden">
+                    <div id="output-placeholder" class="output-placeholder">Your result will appear here</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <button id="generate-btn" disabled>Generate</button>
+            <div id="status"></div>
+        </div>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
